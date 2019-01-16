@@ -17,10 +17,15 @@ const MessageSchema = new Schema({
   deleted: {
     type: Boolean,
     required: true
+  },
+
+  //Client reference
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "Client",
+    required: true
   }
 });
 
 module.exports = MessageSchema;
 
-// Tab 2 - Message
-// (client_id(FK), timestamp, linkedin_id, accept_time, deleted)

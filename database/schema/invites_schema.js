@@ -16,8 +16,15 @@ const InvitesSchema = new Schema({
     type: String,
     required: true
   },
-  linkedin_id: {
+  linkedinId: {
     type: String,
+    required: true
+  },
+
+  //Client reference
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "Client",
     required: true
   }
 });

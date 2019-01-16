@@ -27,18 +27,10 @@ const ClientSchema =  new Schema({
     type: String,
     trim: true
   },
-  interval: {
-    type: Number
-  },
-  size: {
-    type:Number
-  },
-  exlude: {
-    type: Array
-  },
-  message: {
-    type: String
-  },  
+  interval: Number,
+  size: Number,
+  exlude: Array,
+  message: String,  
 });
 
 module.exports = ClientSchema;

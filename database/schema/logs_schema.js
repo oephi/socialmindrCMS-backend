@@ -8,6 +8,13 @@ const LogsSchema = new Schema({
   },
   errors: {
     type: String,
+  },
+  
+  //Client reference
+  user: {
+    type: Schema.Types.ObjectId,
+    ref: "Client",
+    required: true
   }
 });
 
