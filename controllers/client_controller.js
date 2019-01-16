@@ -9,9 +9,13 @@ async function create(req, res) {
 
 }
 
-async function index(req, res) {
-  let clients = await ClientModel.find()
-  res.render("/clients/index", {clients})
+async function index(req, res, next) {
+    try {
+      const clients = await ClientModel.find();
+      return res.json(clients);
+  } catch (err) {
+      return next(err);
+  }
 }
 
 async function show(req, res) {

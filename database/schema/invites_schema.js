@@ -4,7 +4,7 @@ const InvitesSchema = new Schema({
   timestamp: {
     type: Date,
     required: true,
-    default: Date.now
+    default: Date.nowtete
   },
   industry: {
     type: String,
