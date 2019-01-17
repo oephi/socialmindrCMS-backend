@@ -1,11 +1,11 @@
 const ClientModel = require("../database/models/client_model")
 
 async function create(req, res) {
-  let { name, username, password } = req.body;
-  let client =  await ClientModel.create({ name, username, password })
+  let { title, name, username } = req.body;
+  let client =  await ClientModel.create({ title, name, username })
   .catch(err => res.status(500).send(err));
 
-  res.redirect(`/clients/show/${client._id}`);
+  res.redirect(`/clients/${client._id}`);
 
 }
 
