@@ -19,11 +19,18 @@ async function index(req, res, next) {
 }
 
 async function show(req, res) {
-  let { id } = req.params
+  try {
+    const { id } = req.params;
+    const client = await ClientModel.findById(id);
+    return res.json(client);
+} catch(err) {
+    return next(err);
+}
 
 }
 
 module.exports = {
   create,
-  index
+  index,
+  show
 }
