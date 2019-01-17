@@ -1,0 +1,1 @@
+const AuthModel = require("../database/models/auth_model")
