@@ -1,6 +1,11 @@
 require('dotenv').config();
 const mongoose =require("../config/database");
 const ClientModel = require("./models/client_model");
+const InviteCleanerModel = require("./models/invite_cleaner_model");
+const InvitesModel = require("./models/invite_cleaner_model")
+const LogsModel = require("./models/invite_cleaner_model")
+const MessageModel = require("./models/invite_cleaner_model")
+
 const faker = require("faker");
 
 const clientPromises = [];
@@ -15,7 +20,7 @@ for(let i = 0; i < 10; i++) {
         interval: faker.random.number(),
         size: faker.random.number(),
         exclude: [faker.company.companyName(), faker.company.companyName(), faker.company.companyName()],
-        message: faker.lorem.paragraph()
+        // message: faker.lorem.paragraph()
     }));
   }
 
@@ -25,3 +30,5 @@ Promise.all(clientPromises)
 })
 .catch(err => console.log(`Seeds file had an error: ${err}`))
 .finally(() => mongoose.disconnect());
+
+

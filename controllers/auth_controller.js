@@ -6,7 +6,7 @@ async function register(req, res, next) {
 
     UserModel.register({ email }, password, function(err, user) {
        if (err) { 
-           return next(err)
+           return next(err) 
         }
 
         const token = JWTService.createJWT(user._id);
@@ -16,7 +16,7 @@ async function register(req, res, next) {
 }
 
 async function login(req, res, next) {
-    const { email, password } = req.body;
+  const { email, password } = req.body;
     try {
         const { user, error } = await UserModel.authenticate()(email, password);
         if (error) throw error;

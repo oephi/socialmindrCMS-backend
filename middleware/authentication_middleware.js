@@ -8,7 +8,7 @@ function authorize (req, res, next) {
 
 function authRedirect (req, res, next) {
   if (req.user) {
-    return res.redirect("/dashboard")
+    return res.redirect("/clients")
   }
 
   next();

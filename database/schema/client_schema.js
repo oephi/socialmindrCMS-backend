@@ -1,4 +1,8 @@
 const { Schema } = require("mongoose");
+const InviteCleanerSchema = require("./invite_cleaner_schema")
+const InvitesSchema = require("./invites_schema")
+const LogsSchema = require("./logs_schema")
+const MessageSchema = require("./message_schema")
 
 const ClientSchema =  new Schema({
   title: {
@@ -30,8 +34,11 @@ const ClientSchema =  new Schema({
   interval: Number,
   size: Number,
   exlude: Array,
-  message: String,  
+  message: String,
+
+  invites: [InvitesSchema]
 });
+
 
 module.exports = ClientSchema;
 
