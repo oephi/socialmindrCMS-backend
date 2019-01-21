@@ -9,8 +9,10 @@ async function create(req, res) {
 
 }
 
-async function index(req, res, next) {
-    try {
+async function index(req, res) {
+  console.log(req.session.user) 
+  
+  try {
       const clients = await ClientModel.find();
       return res.json(clients);
   } catch (err) {

@@ -12,10 +12,12 @@
   "license": "ISC",
   "dependencies": {
     "celebrate": "^9.0.1",
+    "connect-mongo": "^2.0.3",
     "cors": "^2.8.5",
     "dotenv": "^6.2.0",
     "error-handler": "^1.0.0",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "jsonwebtoken": "^8.4.0",
     "lodash": "^4.17.11",
     "mongoose": "^5.4.4",
@@ -26,6 +28,7 @@
     "passport-local-mongoose-email": "^0.1.4"
   },
   "devDependencies": {
+    "express-handlebars": "^3.0.0",
     "faker": "^4.1.0",
     "nodemon": "^1.18.9"
   }
