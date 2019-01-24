@@ -29,19 +29,18 @@ async function patch(req, res, next) {
 
   const { id } = req.params
   try {
-    await ClientModel.findById(id, (err,  x) => {
-      if(req.body._id){
-        delete req.body._id
-      }
-      for( let b in req.body ){
-        x[b] = req.body[b];
-      }
-      x.save();
-      res.json(x)
+    await ClientModel.findById(id, (err, client) => {
       
-      console.log(req.body._id)
-    });
-    // return res.json(client);
+      req.body._id ? delete req.body._id : err
+      
+      for( let change in req.body ){
+        client[change] = req.body[change];
+      }
+
+      client.save();
+      res.json(client)
+       // console.log(req.body)
+    })
 } catch (err) {
     return next(err);
 }
