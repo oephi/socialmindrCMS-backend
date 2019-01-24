@@ -1,13 +1,13 @@
 const ClientModel = require("../database/models/client_model")
 const InvitesCleanerModel = require("../database/models/invite_cleaner_model");
-const InvitesModel = require("../database/models/invites_model");
-const LogsModel = require("../database/models/logs_model");
+const InvitesModel = require("../database/models/invite_model");
+const LogsModel = require("../database/models/log_model");
 const MessageModel = require("../database/models/message_model")
 const mongoose = require("mongoose");
 
 async function create(req, res) {
-  let { title, name, username } = req.body;
-  let client =  await ClientModel.create({ title, name, username })
+  const { title, name, username } = req.body;
+  const client =  await ClientModel.create({ title, name, username })
   .catch(err => res.status(500).send(err));
 
   res.redirect(`/clients/${client._id}`);
@@ -15,7 +15,7 @@ async function create(req, res) {
 }
 
 async function index(req, res, next) {
-  console.log(req.session.user) 
+  // console.log(req.session.user) 
   
   try {
       const clients = await ClientModel.find();
@@ -23,6 +23,28 @@ async function index(req, res, next) {
   } catch (err) {
       return next(err);
   }
+}
+
+async function patch(req, res, next) {
+  console.log(req.params.id)
+
+  const { id } = req.params
+  try {
+    const client = await ClientModel.findById(id, (err,  x) => {
+      if(req.body._id){
+        delete req.body._id
+      }
+      for( let b in req.body ){
+        x[b] = req.body[b];
+      }
+      x.save();
+      res.json(x)
+
+    });
+    return res.json(client);
+} catch (err) {
+    return next(err);
+}
 }
 
 async function showClient(req, res, next) {
@@ -78,6 +100,7 @@ async function showMessage(req, res, next) {
 module.exports = {
   create,
   index,
+  patch,
   showClient,
   showCleaner,
   showInvites,

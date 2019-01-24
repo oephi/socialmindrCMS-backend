@@ -4,6 +4,7 @@ const exphbs = require("express-handlebars");
 const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const mongoose = require("mongoose");
+const cors = require("cors");
 const routes = require("./routes");
 const passport = require("./config/passport");
 
@@ -27,6 +28,18 @@ app.use(passport.initialize());
 
 // app.get('/', (req, res) => res.send('Welcome to Socialmindr CMS!'));
 
+
+// const corsOptions = {
+//   origin: process.env.CORS_URI,
+//   optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+// }
+
+// app.get('/clients', cors(corsOptions), function (req, res, next) {
+//   res.json({msg: `This is CORS-enabled for only ${process.env.CORS_URI}.`})
+// })
+app.use(cors({
+  // origin: process.env.CORS_URI
+}))
 app.use(routes);
 
 module.exports = app;

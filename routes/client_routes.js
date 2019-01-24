@@ -8,5 +8,6 @@ router.get("/", ClientController.index);
 
 router.get("/:id", ClientController.showClient);
 router.post("/", ClientController.create);
+router.patch("/:id", ClientController.patch);
 
 module.exports = router;

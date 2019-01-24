@@ -1,13 +1,13 @@
 const { Schema } = require("mongoose");
 const InviteCleanerSchema = require("./invite_cleaner_schema")
-const InvitesSchema = require("./invites_schema")
-const LogsSchema = require("./logs_schema")
+const InvitesSchema = require("./invite_schema")
+const LogsSchema = require("./log_schema")
 const MessageSchema = require("./message_schema")
 
 const ClientSchema =  new Schema({
   title: {
     type: String,
-    required: true
+    // required: true
   },
   name: {
     type: String,
@@ -16,8 +16,12 @@ const ClientSchema =  new Schema({
   },
   username: {
     type: String,
-    required: true,
+    // required: true,
     trim: true
+  },
+  email: {
+    type: String,
+    required: true
   },
   password: {
     type: String,
@@ -35,8 +39,11 @@ const ClientSchema =  new Schema({
   size: Number,
   exlude: Array,
   message: String,
+  account_status: Boolean,
+  verification_status: Boolean,
+  server_status: Boolean
 
-  invites: [InvitesSchema]
+  // invites: [InvitesSchema]
 });
 
 

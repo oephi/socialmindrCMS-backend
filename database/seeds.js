@@ -2,8 +2,8 @@ require('dotenv').config();
 const mongoose =require("../config/database");
 const ClientModel = require("./models/client_model");
 const InviteCleanerModel = require("./models/invite_cleaner_model");
-const InvitesModel = require("./models/invites_model")
-const LogsModel = require("./models/logs_model")
+const InvitesModel = require("./models/invite_model")
+const LogsModel = require("./models/log_model")
 const MessageModel = require("./models/message_model")
 
 const faker = require("faker");
@@ -15,11 +15,15 @@ for(let i = 0; i < 10; i++) {
         title: faker.name.title(),
         name: faker.name.firstName(),
         username: faker.random.word(),
+        email: faker.internet.email(),
         location: faker.address.country(),
         industry: faker.commerce.department(),
         interval: faker.random.number(),
         size: faker.random.number(),
         exclude: [faker.company.companyName(), faker.company.companyName(), faker.company.companyName()],
+        account_status: false,
+        verification_status: false,
+        server_status:false
         // message: faker.lorem.paragraph()
     }));
   }
