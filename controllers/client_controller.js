@@ -29,7 +29,7 @@ async function patch(req, res, next) {
 
   const { id } = req.params
   try {
-    const client = await ClientModel.findById(id, (err,  x) => {
+    await ClientModel.findById(id, (err,  x) => {
       if(req.body._id){
         delete req.body._id
       }
@@ -41,7 +41,7 @@ async function patch(req, res, next) {
       
       console.log(req.body._id)
     });
-    return res.json(client);
+    // return res.json(client);
 } catch (err) {
     return next(err);
 }
