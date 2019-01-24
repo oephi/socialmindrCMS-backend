@@ -15,8 +15,7 @@ async function create(req, res) {
 }
 
 async function index(req, res, next) {
-  // console.log(req.session.user) 
-  
+  // console.log(req.session.user)   
   try {
       const clients = await ClientModel.find();
       return res.json(clients);

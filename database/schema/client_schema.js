@@ -5,7 +5,7 @@ const LogsSchema = require("./log_schema")
 const MessageSchema = require("./message_schema")
 
 const ClientSchema =  new Schema({
-  title: {
+  job_title: {
     type: String,
     // required: true
   },
@@ -21,7 +21,7 @@ const ClientSchema =  new Schema({
   },
   email: {
     type: String,
-    required: true
+    // required: true
   },
   password: {
     type: String,
@@ -29,15 +29,15 @@ const ClientSchema =  new Schema({
   },
   location: {
     type: Array,
-    trim: true
+    // trim: true
   },
   industry: {
-    type: String,
+    type: Array,
     trim: true
   },
   interval: Number,
-  size: Number,
-  exlude: Array,
+  company_size: String,
+  company_exclusion: Array,
   message: String,
   account_status: Boolean,
   verification_status: Boolean,
