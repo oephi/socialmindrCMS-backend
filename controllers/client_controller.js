@@ -6,8 +6,8 @@ const MessageModel = require("../database/models/message_model")
 const mongoose = require("mongoose");
 
 async function create(req, res) {
-  const { title, name, username } = req.body;
-  const client =  await ClientModel.create({ title, name, username })
+  const { name, email, password } = req.body;
+  const client =  await ClientModel.create({ name, email password })
   .catch(err => res.status(500).send(err));
 
   res.redirect(`/clients/${client._id}`);
