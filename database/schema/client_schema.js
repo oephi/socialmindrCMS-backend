@@ -35,13 +35,22 @@ const ClientSchema =  new Schema({
     type: Array,
     trim: true
   },
+  account_status: {
+    type: Boolean,
+    default: false
+  },
+  verification_status: {
+    type: Boolean,
+    default: false
+  }, 
+  server_status: {
+    type: Boolean,
+    default: false
+  },
   interval: Number,
   company_size: String,
   company_exclusion: Array,
   message: String,
-  account_status: Boolean,
-  verification_status: Boolean,
-  server_status: Boolean
 
   // invites: [InvitesSchema]
 });

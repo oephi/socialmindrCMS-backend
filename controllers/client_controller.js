@@ -10,7 +10,7 @@ async function create(req, res) {
   const client =  await ClientModel.create({ name, email, password })
   .catch(err => res.status(500).send(err));
 
-  res.redirect(`/clients/${client._id}`);
+  res.redirect(`/clients`);
 
 }
 
@@ -25,7 +25,7 @@ async function index(req, res, next) {
 }
 
 async function patch(req, res, next) {
-  console.log(req.params.id)
+  // console.log(req.params.id)
 
   const { id } = req.params
   try {
@@ -38,7 +38,8 @@ async function patch(req, res, next) {
       }
       x.save();
       res.json(x)
-
+      
+      console.log(req.body._id)
     });
     return res.json(client);
 } catch (err) {

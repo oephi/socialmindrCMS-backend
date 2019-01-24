@@ -12,19 +12,19 @@ const clientPromises = [];
 for(let i = 0; i < 10; i++) {
     console.log(`Creating client ${i + 1}`);
     clientPromises.push(ClientModel.create({
-        title: faker.name.title(),
+        job_title: faker.name.title(),
         name: faker.name.firstName(),
         username: faker.random.word(),
         email: faker.internet.email(),
         location: faker.address.country(),
         industry: faker.commerce.department(),
         interval: faker.random.number(),
-        size: faker.random.number(),
-        exclude: [faker.company.companyName(), faker.company.companyName(), faker.company.companyName()],
+        company_size: faker.random.number(),
+        company_exclusion: [faker.company.companyName(), faker.company.companyName(), faker.company.companyName()],
+        message: faker.lorem.paragraph(),
         account_status: false,
         verification_status: false,
         server_status:false
-        // message: faker.lorem.paragraph()
     }));
   }
 
