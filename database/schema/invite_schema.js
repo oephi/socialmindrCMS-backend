@@ -3,8 +3,7 @@ const { Schema } = require("mongoose");
 const InvitesSchema = new Schema({
   timestamp: {
     type: Date,
-    required: true,
-    default: Date.nowtete
+    default: Date.now
   },
   industry: {
     type: String,
@@ -13,16 +12,14 @@ const InvitesSchema = new Schema({
     type: String
   },
   location: {
-    type: String,
-    required: true
+    type: String
   },
   linkedinId: {
-    type: String,
-    required: true
+    type: String
   },
 
   //Client reference
-  user: {
+  client: {
     type: Schema.Types.ObjectId,
     ref: "Client",
     required: true

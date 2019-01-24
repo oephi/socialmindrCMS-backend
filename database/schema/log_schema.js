@@ -3,15 +3,14 @@ const { Schema } = require("mongoose");
 const LogsSchema = new Schema({
   timestamp: {
     type: Date,
-    default: Date.now,
-    required: true
+    default: Date.now
   },
-  errors: {
+  error_log: {
     type: String,
   },
   
   //Client reference
-  user: {
+  client: {
     type: Schema.Types.ObjectId,
     ref: "Client",
     required: true

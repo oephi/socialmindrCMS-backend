@@ -7,20 +7,17 @@ const MessageSchema = new Schema({
   },
   linkedin_id: {
     type: String,
-    required: true
   },
   accept_time : {
     type: Date,
     default: Date.now,
-    required: true
   },
   deleted: {
     type: Boolean,
-    required: true
   },
 
   //Client reference
-  user: {
+  client: {
     type: Schema.Types.ObjectId,
     ref: "Client",
     required: true

@@ -9,7 +9,7 @@ const InviteCleanerSchema =  new Schema ({
   invites_remaining: { type: Number },
   
   //Client reference
-  user: {
+  client: {
     type: Schema.Types.ObjectId,
     ref: "Client",
     required: true
