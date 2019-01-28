@@ -10,7 +10,7 @@ async function create(req, res) {
   const client =  await ClientModel.create({ name, email, password })
   .catch(err => res.status(500).send(err));
 
-  res.redirect(`/clients`);
+  res.redirect(`/clients/${client._id}`);
 
 }
 
@@ -39,7 +39,7 @@ async function patch(req, res, next) {
       x.save();
       res.json(x)
       
-      console.log(req.body._id)
+      // console.log(req.body._id)
     });
     // return res.json(client);
 } catch (err) {
