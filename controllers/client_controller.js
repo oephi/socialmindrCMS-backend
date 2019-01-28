@@ -10,7 +10,7 @@ async function create(req, res) {
   const client =  await ClientModel.create({ name, email, password })
   .catch(err => res.status(500).send(err));
 
-  res.redirect(`/clients`);
+  res.redirect(`/clients/${client._id}`);
 
 }
 
@@ -32,15 +32,18 @@ async function patch(req, res, next) {
     await ClientModel.findById(id, (err, client) => {
       
       req.body._id ? delete req.body._id : err
-      
+     
+    });
+    
+
       for( let change in req.body ){
         client[change] = req.body[change];
       }
 
       client.save();
       res.json(client)
-       // console.log(req.body)
-    })
+    
+    
 } catch (err) {
     return next(err);
 }
