@@ -33,16 +33,16 @@ async function patch(req, res, next) {
       
       req.body._id ? delete req.body._id : err
      
-    });
-    
-
+      
+      
       for( let change in req.body ){
         client[change] = req.body[change];
       }
-
+      
       client.save();
       res.json(client)
-    
+      
+    });
     
 } catch (err) {
     return next(err);
