@@ -1,3 +1,5 @@
+//  Configuration for Authentication using Passport and Passport-JWT
+
 const UserModel = require('./../database/models/user_model');
 const passport  = require("passport");
 const { Strategy: JWTStrategy, ExtractJwt } = require("passport-jwt");

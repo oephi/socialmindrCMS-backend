@@ -1,3 +1,5 @@
+// Configuration for Mongo Database setup
+
 const mongoose = require("mongoose");
 
 mongoose.connect(process.env.DATABASE_URI, { useNewUrlParser: true });
