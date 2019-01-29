@@ -4,11 +4,11 @@ const { Joi, celebrate } = require("celebrate");
 // const passport = require("passport");
 const ClientController = require("../controllers/client_controller");
 
-router.get("/", ClientController.showClients);
+router.get("/", ClientController.index);
 
-router.get("/:id", ClientController.showClient);
-router.post("/", ClientController.createClient);
-router.patch("/:id", ClientController.updateClient);
-router.delete("/:id", ClientController.deleteClient);
+router.get("/:id", ClientController.show);
+router.post("/", ClientController.create);
+router.patch("/:id", ClientController.update);
+router.delete("/:id", ClientController.destroy);
 
 module.exports = router;

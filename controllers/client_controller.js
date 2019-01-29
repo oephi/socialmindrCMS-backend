@@ -1,9 +1,7 @@
-const ClientModel = require("../database/models/client_model")
-const LogsModel = require("../database/models/log_model");
-const MessageModel = require("../database/models/message_model")
+const ClientModel = require("../database/models/client_model");
 const mongoose = require("mongoose");
 
-async function createClient(req, res) {
+async function create(req, res) {
   const { name, email, password } = req.body;
   const client =  await ClientModel.create({ name, email, password })
   .catch(err => res.status(500).send(err));
@@ -12,8 +10,7 @@ async function createClient(req, res) {
 
 }
 
-async function showClients(req, res, next) {
-  // console.log(req.session.user)   
+async function index(req, res, next) {
   try {
       const clients = await ClientModel.find();
       return res.json(clients);
@@ -22,7 +19,7 @@ async function showClients(req, res, next) {
   }
 }
 
-async function updateClient(req, res, next) {
+async function update(req, res, next) {
   try {
     const client = await ClientModel.findByIdAndUpdate(req.params.id, req.body, {new: true});
     return res.json(client); 
@@ -31,7 +28,7 @@ async function updateClient(req, res, next) {
   }
 }
 
-async function deleteClient(req, res, next) {
+async function destroy(req, res, next) {
   try {
     const client = await ClientModel.findByIdAndRemove(req.params.id);
     return res.json(client);
@@ -40,7 +37,7 @@ async function deleteClient(req, res, next) {
   }
 }
 
-async function showClient(req, res, next) {
+async function show(req, res, next) {
   try {
     const { id } = req.params;
     const client = await ClientModel.findById(id);
@@ -50,21 +47,11 @@ async function showClient(req, res, next) {
   }
 }
 
-// async function showMessage(req, res, next) {
-//   try {
-//     const { id } = req.params
-//     const client = await MessageModel.find({client: mongoose.Types.ObjectId(id)});
-//     return res.json(client);
-//   } catch(err) {
-//     return next(err);
-//   }
-// }
-
 module.exports = {
-  createClient,
-  showClients,
-  updateClient,
-  deleteClient,
-  showClient,
+  create,
+  index,
+  update,
+  destroy,
+  show,
   // showMessage
 }
