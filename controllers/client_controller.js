@@ -1,6 +1,4 @@
 const ClientModel = require("../database/models/client_model")
-const InvitesCleanerModel = require("../database/models/invite_cleaner_model");
-const InvitesModel = require("../database/models/invite_model");
 const LogsModel = require("../database/models/log_model");
 const MessageModel = require("../database/models/message_model")
 const mongoose = require("mongoose");
@@ -52,45 +50,15 @@ async function showClient(req, res, next) {
   }
 }
 
-async function showCleaner(req, res, next) {
-  try {
-    const { id } = req.params;
-    const client = await InvitesCleanerModel.find({client: mongoose.Types.ObjectId(id)});
-    return res.json(client);
-  } catch(err) {
-    return next(err);
-  }
-}
-
-async function showInvites(req, res, next) {
-  try {
-    const { id } = req.params
-    const client = await InvitesModel.find({client: mongoose.Types.ObjectId(id)});
-    return res.json(client);
-  } catch(err) {
-    return next(err);
-  }
-}
-
-async function showLogs(req, res, next) {
-  try {
-    const { id } = req.params
-    const client = await LogsModel.find({client: mongoose.Types.ObjectId(id)});
-    return res.json(client);
-  } catch(err) {
-    return next(err);
-  }
-}
-
-async function showMessage(req, res, next) {
-  try {
-    const { id } = req.params
-    const client = await MessageModel.find({client: mongoose.Types.ObjectId(id)});
-    return res.json(client);
-  } catch(err) {
-    return next(err);
-  }
-}
+// async function showMessage(req, res, next) {
+//   try {
+//     const { id } = req.params
+//     const client = await MessageModel.find({client: mongoose.Types.ObjectId(id)});
+//     return res.json(client);
+//   } catch(err) {
+//     return next(err);
+//   }
+// }
 
 module.exports = {
   createClient,
@@ -98,8 +66,5 @@ module.exports = {
   updateClient,
   deleteClient,
   showClient,
-  showCleaner,
-  showInvites,
-  showLogs,
-  showMessage
+  // showMessage
 }

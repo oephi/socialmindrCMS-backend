@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const ClientController = require("../controllers/client_controller");
+const InviteCleanerController = require("../controllers/invite_cleaner_controller");
 
-router.get("/:id", ClientController.showCleaner);
+router.get("/:id", InviteCleanerController.show);
 
 module.exports = router;
