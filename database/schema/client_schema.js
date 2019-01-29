@@ -1,12 +1,8 @@
 const { Schema } = require("mongoose");
-const InviteCleanerSchema = require("./invite_cleaner_schema")
-const InvitesSchema = require("./invite_schema")
-const LogsSchema = require("./log_schema")
-const MessageSchema = require("./message_schema")
 
 const ClientSchema =  new Schema({
   job_title: {
-    type: String,
+    type: Array,
     // required: true
   },
   name: {
@@ -60,8 +56,6 @@ module.exports = ClientSchema;
 
 
 
-// Client
-// (name, username, passwordTitle, location, industry, interval, size, exclude, message, server_id(FK), client_id)
 
 
 
