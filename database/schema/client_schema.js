@@ -44,7 +44,7 @@ const ClientSchema =  new Schema({
     default: false
   },
   interval: Number,
-  company_size: String,
+  company_size: Array,
   company_exclusion: Array,
   message: String,
 
