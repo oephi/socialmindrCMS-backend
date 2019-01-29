@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const ClientController = require("../controllers/client_controller");
+const MessageController = require("../controllers/message_controller");
 
-router.get("/:id", ClientController.showMessage);
+router.get("/:id", MessageController.show);
 
 module.exports = router;
