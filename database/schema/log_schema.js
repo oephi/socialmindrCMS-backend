@@ -8,6 +8,9 @@ const LogsSchema = new Schema({
   error_log: {
     type: String,
   },
+  server_messages: {
+    type: String
+  },
   
   //Client reference
   client: {
