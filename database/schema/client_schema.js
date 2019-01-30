@@ -46,6 +46,7 @@ const ClientSchema =  new Schema({
   interval: Number,
   company_size: Array,
   company_exclusion: Array,
+  client_notes: String,
   message: String,
 
   // invites: [InvitesSchema]
