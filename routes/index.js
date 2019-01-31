@@ -12,11 +12,16 @@ const messageRoutes = require("./message_routes");
 
 
 router.use("/", authRoutes);
-router.use("/clients", cors(corsConfig.corsOptions), clientRoutes);
+router.use("/clients",  cors(corsConfig.corsOptions), clientRoutes);
+// router.use("/clients", passport.authenticate("jwt", { session: false }), cors(corsConfig.corsOptions), clientRoutes);
 router.use("/invite_cleaner", cors(corsConfig.corsOptions), inviteCleanerRoutes);
+// router.use("/invite_cleaner", passport.authenticate("jwt", { session: false }), cors(corsConfig.corsOptions), inviteCleanerRoutes);
 router.use("/invite", cors(corsConfig.corsOptions), inviteRoutes);
+// router.use("/invite", passport.authenticate("jwt", { session: false }), cors(corsConfig.corsOptions), inviteRoutes);
 router.use("/log", cors(corsConfig.corsOptions), logRoutes);
+// router.use("/log", passport.authenticate("jwt", { session: false }), cors(corsConfig.corsOptions), logRoutes);
 router.use("/message", cors(corsConfig.corsOptions), messageRoutes);
+// router.use("/message", passport.authenticate("jwt", { session: false }), cors(corsConfig.corsOptions), messageRoutes);
 
 module.exports = router;
 

@@ -7,7 +7,7 @@ async function create(req, res) {
   //Destructure values out of request body
   const { name, email, password } = req.body;
   // Create client with destuctured values
-  const client =  await ClientModel.create({ name, email, password })
+  const client =  await ClientModel.create({ name, email, password }) 
   .catch(err => res.status(500).send(err));
 
   res.redirect(`/clients/${client._id}`);
