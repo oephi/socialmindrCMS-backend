@@ -28,16 +28,21 @@ async function index(req, res, next) {
 async function isVerified(req, res, next) {
   const { id } = req.params;
   const { pincode } = req.body;
-  console.log(req.body);
   try {
     const client = await ClientModel.findById(id);
-      // console.log(client)
       const { verification_code, verification_status } = client;
-      const result = pincode === verification_code ? !verification_status : verification_status
-      client.verification_status = result;
+      if (verification_status === false && pincode !== verification_code) {
+        res.status(400).send("Verification code is invalid")
+      } else if (verification_status === false){
+        const result = pincode === verification_code ? !verification_status : verification_status
+        client.verification_status = result;
+        res.status(200).send("Client has successfully been verified")
+      } else {
+        res.status(200).send("Client is already verified")
+      }
+      
       await client.save();
-        return res.json(client)
-  } catch(err) {
+  } catch (err) {
     return next(err);
   }
 }
