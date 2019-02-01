@@ -7,7 +7,7 @@ async function create(req, res) {
   //Destructure values out of request body
   const { name, email, password } = req.body;
   // Create client with destuctured values
-  const client =  await ClientModel.create({ name, email, password })
+  const client =  await ClientModel.create({ name, email, password }) 
   .catch(err => res.status(500).send(err));
 
   res.redirect(`/clients/${client._id}`);
@@ -23,6 +23,27 @@ async function index(req, res, next) {
       return next(err);
   }
 }
+
+
+async function isVerified(req, res, next) {
+  const { id } = req.params;
+  const { verify } = req.body;
+  try {
+    const client = await ClientModel.findById(id);
+      console.log(client)
+      const { verification_code, verification_status } = client;
+      const result = verify === verification_code ? !verification_status : verification_status
+      
+        
+      console.log(verify)
+      
+      console.log(result)
+      // client.save
+  } catch(err) {
+    return next(err);
+  }
+}
+
 
 // Handler to handle retrieving information for a single client
 async function show(req, res, next) {
@@ -64,6 +85,7 @@ async function destroy(req, res, next) {
 module.exports = {
   create,
   index,
+  isVerified,
   update,
   destroy,
   show,

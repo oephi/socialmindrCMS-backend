@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "start": "nodemon index.js",
     "seed": "node database/seeds.js"
   },
@@ -29,6 +29,10 @@
   "devDependencies": {
     "express-handlebars": "^3.0.0",
     "faker": "^4.1.0",
-    "nodemon": "^1.18.9"
+    "jest": "^24.0.0",
+    "jest-express": "^1.9.4",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.9",
+    "supertest": "^3.4.2"
   }
 }

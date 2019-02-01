@@ -23,6 +23,7 @@ for(let i = 0; i < 10; i++) {
         company_exclusion: [faker.company.companyName(), faker.company.companyName(), faker.company.companyName()],
         message: faker.lorem.paragraph(),
         account_status: false,
+        verification_code: 123456,
         verification_status: false,
         server_status:false
     }));

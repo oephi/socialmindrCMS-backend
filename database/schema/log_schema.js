@@ -8,7 +8,7 @@ const LogsSchema = new Schema({
   error_log: {
     type: String,
   },
-  server_messages: {
+  server_message: {
     type: String
   },
   

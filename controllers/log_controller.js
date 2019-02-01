@@ -12,6 +12,17 @@ async function show(req, res, next) {
   }
 }
 
+async function create(req, res, next) {
+  const { id, server_message, timestamp, client } = req.body;
+  // Create log with destuctured values
+  const log =  await LogModel.create({ id, server_message, timestamp, client }) 
+  .catch(err => res.status(500).send(err));
+
+  res.redirect(`/clients/${log.client}`);
+
+}
+
 module.exports = {
-  show
+  show,
+  create
 }

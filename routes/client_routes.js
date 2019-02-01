@@ -8,7 +8,9 @@ router.get("/", ClientController.index);
 
 router.get("/:id", ClientController.show);
 router.post("/", ClientController.create);
+router.post("/:id/verification", ClientController.isVerified);
 router.patch("/:id", ClientController.update);
 router.delete("/:id", ClientController.destroy);
+
 
 module.exports = router;
