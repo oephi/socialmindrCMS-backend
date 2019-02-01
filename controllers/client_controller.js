@@ -34,11 +34,9 @@ async function isVerified(req, res, next) {
       const { verification_code, verification_status } = client;
       const result = verify === verification_code ? !verification_status : verification_status
       
-        
-      console.log(verify)
-      
-      console.log(result)
-      // client.save
+      client.verification_status = result;
+      await client.save();
+        return res.json(client)
   } catch(err) {
     return next(err);
   }
