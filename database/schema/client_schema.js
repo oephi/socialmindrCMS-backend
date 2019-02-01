@@ -35,6 +35,10 @@ const ClientSchema =  new Schema({
     type: Boolean,
     default: false
   },
+  verification_code: {
+    type: String,
+    default: 123456
+  },
   verification_status: {
     type: Boolean,
     default: false

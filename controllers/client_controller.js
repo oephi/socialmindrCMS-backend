@@ -24,6 +24,27 @@ async function index(req, res, next) {
   }
 }
 
+
+async function isVerified(req, res, next) {
+  const { id } = req.params;
+  const { verify } = req.body;
+  try {
+    const client = await ClientModel.findById(id);
+      console.log(client)
+      const { verification_code, verification_status } = client;
+      const result = verify === verification_code ? !verification_status : verification_status
+      
+        
+      console.log(verify)
+      
+      console.log(result)
+      // client.save
+  } catch(err) {
+    return next(err);
+  }
+}
+
+
 // Handler to handle retrieving information for a single client
 async function show(req, res, next) {
   try {
@@ -64,6 +85,7 @@ async function destroy(req, res, next) {
 module.exports = {
   create,
   index,
+  isVerified,
   update,
   destroy,
   show,
