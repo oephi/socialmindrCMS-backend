@@ -51,8 +51,8 @@ async function show(req, res, next) {
     // Retrieve client information with this id
     const client = await ClientModel.findById(id);
     return res.json(client);
-  } catch(err) {
-      return next(err);
+  } catch (err) {
+      return next (err);
   }
 }
 
