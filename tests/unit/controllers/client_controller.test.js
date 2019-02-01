@@ -17,5 +17,24 @@ describe("ClientController", () => {
       expect(res.json).toBeCalled();
     });
   });
+
+  describe("show()", () => {
+    test("call res.json()", async () => {
+      const res = {
+        json: jest.fn()
+      }
+      const next = {
+        
+      }
+
+      const clientId = 123456;
+
+      ClientModel.findById = jest.fn().mockResolvedValue(clientId);
+
+      await ClientController.show(null, res, next);
+      expect(ClientModel.findById).toBeCalledTimes(1);
+      expect(res.json).toBeCalled();
+    });
+  });
 });
 
