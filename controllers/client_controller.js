@@ -32,6 +32,7 @@ async function isVerified(req, res, next) {
     const client = await ClientModel.findById(id);
       console.log(client)
       const { verification_code, verification_status } = client;
+      
       const result = verify === verification_code ? !verification_status : verification_status
       
       client.verification_status = result;
@@ -51,8 +52,8 @@ async function show(req, res, next) {
     // Retrieve client information with this id
     const client = await ClientModel.findById(id);
     return res.json(client);
-  } catch(err) {
-      return next(err);
+  } catch (err) {
+      return next (err);
   }
 }
 
