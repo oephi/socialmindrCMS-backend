@@ -3,7 +3,6 @@ const { Schema } = require("mongoose");
 const ClientSchema =  new Schema({
   job_title: {
     type: Array,
-    // required: true
   },
   name: {
     type: String,
@@ -12,7 +11,6 @@ const ClientSchema =  new Schema({
   },
   username: {
     type: String,
-    // required: true,
     trim: true
   },
   email: {
@@ -21,7 +19,7 @@ const ClientSchema =  new Schema({
   },
   password: {
     type: String,
-    // required: true
+    required: true
   },
   location: {
     type: Array,
@@ -53,7 +51,6 @@ const ClientSchema =  new Schema({
   client_notes: String,
   message: String,
 
-  // invites: [InvitesSchema]
 });
 
 

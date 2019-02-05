@@ -16,6 +16,7 @@ async function create(req, res) {
 
 // Show all clients
 async function index(req, res, next) {
+  // console.log(req.session.token);  
   try {
       const clients = await ClientModel.find();
       return res.json(clients);

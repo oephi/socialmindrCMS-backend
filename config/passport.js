@@ -1,29 +1,34 @@
-//  Configuration for Authentication using Passport and Passport-JWT
+const UserModel = require('./../database/models/user_model');
+const passport = require('passport');
 
-// const UserModel = require('./../database/models/user_model');
-// const passport  = require("passport");
-// const { Strategy: JWTStrategy, ExtractJwt } = require("passport-jwt");
+const { Strategy: JWTStrategy, ExtractJwt } = require('passport-jwt');
 
-// passport.use(UserModel.createStrategy());
+passport.use(UserModel.createStrategy());
 
-// passport.serializeUser(UserModel.serializeUser());
-// passport.deserializeUser(UserModel.deserializeUser());
+passport.serializeUser(UserModel.serializeUser());
+passport.deserializeUser(UserModel.deserializeUser());
 
-// passport.use(new JWTStrategy({
-//     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
-//     secretOrKey: process.env.JWT_SECRET
-// }, async (jwtPayload, done) => {
-//     try {
-//         const user = await UserModel.findById(jwtPayload.sub);
+passport.use(
+	new JWTStrategy(
+		{
+			jwtFromRequest : ExtractJwt.fromAuthHeaderAsBearerToken(),
+			// jwtFromRequest : req.session.token,
+			secretOrKey    : process.env.JWT_SECRET
+		},
+		async (jwtPayload, done) => {
+			try {
+				const user = await UserModel.findById(jwtPayload.sub);
 
-//         if (!user) {
-//             return done("User not found");
-//         }
+				if (!user) {
+					return done('User not found');
+				}
 
-//         return done(null, user);
-//     } catch (err) {
-//         done(err);
-//     }
-// }));
+				return done(null, user);
+			} catch (err) {
+				done(err);
+			}
+		}
+	)
+);
 
-// module.exports = passport;
+module.exports = passport;
