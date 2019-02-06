@@ -7,13 +7,7 @@ router.get("/", ClientController.index);
 
 router.get("/:id", ClientController.show);
 
-router.post("/", celebrate({
-  body: {
-      name: Joi.string().required(),
-      email: Joi.string().email().required(),
-      password: Joi.string().required()
-  }
-}), ClientController.create);
+router.post("/", ClientController.create);
 
 router.post("/verification/:id", ClientController.isVerified);
 

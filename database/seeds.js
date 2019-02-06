@@ -16,6 +16,7 @@ for(let i = 0; i < 10; i++) {
         name: faker.name.firstName(),
         username: faker.random.word(),
         email: faker.internet.email(),
+        password: 'password',
         location: faker.address.country(),
         industry: faker.commerce.department(),
         interval: faker.random.number(),
