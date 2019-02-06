@@ -1,5 +1,6 @@
 const { Schema } = require("mongoose");
 
+
 const ClientSchema =  new Schema({
   job_title: {
     type: Array,
@@ -50,7 +51,6 @@ const ClientSchema =  new Schema({
   company_exclusion: Array,
   client_notes: String,
   message: String,
-
 });
 
 

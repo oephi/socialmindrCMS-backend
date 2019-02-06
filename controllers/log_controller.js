@@ -18,7 +18,7 @@ async function create(req, res, next) {
   const log =  await LogModel.create({ id, server_message, timestamp, client }) 
   .catch(err => res.status(500).send(err));
 
-  res.redirect(`/clients/${log.client}`);
+  res.redirect(`/log/${log.client}`);
 
 }
 
