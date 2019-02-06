@@ -37,7 +37,7 @@ async function isVerified(req, res, next) {
       } else if (verification_status === false){
         const result = pincode === verification_code ? !verification_status : verification_status
         client.verification_status = result;
-        res.status(200).send("Client has successfully been verified")
+        res.redirect(`/clients/${client._id}`);
       } else {
         res.status(200).send("Client is already verified")
       }
