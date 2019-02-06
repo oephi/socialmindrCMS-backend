@@ -17,13 +17,7 @@ router.post("/", celebrate({
 
 router.post("/verification/:id", ClientController.isVerified);
 
-router.patch("/:id", celebrate({
-  body: {
-      name: Joi.string().required(),
-      email: Joi.string().email().required(),
-      password: Joi.string().required()
-  }
-}), ClientController.update);
+router.patch("/:id", ClientController.update);
 
 router.delete("/:id", ClientController.destroy);
 

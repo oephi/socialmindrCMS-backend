@@ -64,6 +64,7 @@ async function show(req, res, next) {
 
 // Handler to handle any changes made to clients in database.  PATCH equivalent
 async function update(req, res, next) {
+  console.log(req.body);
   try {
     // Find user in database by id (req.params.id), pass in the changes(req.body), and return the new document (new: true)
     const client = await ClientModel.findByIdAndUpdate(req.params.id, req.body, {new: true});
