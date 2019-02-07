@@ -110,6 +110,10 @@ After this, there was a lot of back and forth between our team and theirs in reg
 - As a user I need to be able leave server messages for records.  
 - As a user I need to be able to logout
 
+
+---
+#### A workflow diagram of the user journey
+![user flow](docs/SocialMindr-user-journey.png)
 ----
 #### Wireframes
 ![server logs](docs/socialmindr-mobile1.png)
