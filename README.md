@@ -231,10 +231,13 @@ ___
 ## Trello Board
 
 ___
-![Trello Board](docs/SocialMindr-TrelloBoard#1.png)
+
+![trello board#1](https://raw.githubusercontent.com/oephi/socialmindrCMS-backend/master/docs/SocialMindr-TrelloBoard%231.png)
+
 
 ___
-![Trello Board](docs/SocialMindr-TrelloBoard#2.png)
+
+![trello board#2](https://github.com/oephi/socialmindrCMS-backend/blob/master/docs/SocialMindr-TrelloBoard%232.png?raw=true)
 
 ___
 ##  Short Answer Questions
