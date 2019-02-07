@@ -134,8 +134,100 @@ After this, there was a lot of back and forth between our team and theirs in reg
 ![data flow](docs/Socialmindr-data-flow.png)
 ****
 
+## Details of Project Management & Planning process
 
+___
+![project planning](SocialMindr-ProjectTimeLine.png)
 
+___
+####Client Meetings
+
+#####Meeting #1 - Introductions
+Location: SocialMindr office 
+
+Date/Time: Wednesday 15th Jan 2018 | 6:30pm - 7:30pm
+
+Attendees: 
+
+* Ryan Sickle - CoderAcademy
+* Steven Vi - CoderAcademy
+* Alan Gao - CoderAcademy
+* Andrew (Founder) - SocialMindr 
+* David(Developer) - SocialMindr
+
+Apologies:
+
+* Dan (Developer) - SociaMindr
+
+Minutes: 
+
+* Introduction to the team and basic house keeping
+* Establishing communication plans between the two parties, communications to be done via slack. SocialMindr to invite CoderAcademy into their private chat - **Action - SocialMindr**
+* Scope of works to be fleshed out by SocialMindr and issued to CoderAcademy - **Action - SocialMindr**
+___
+#####Meeting #2 - Defining Scope of Works
+Location: SocialMindr office 
+
+Date/Time: Wednesday 15th Jan 2018 | 6:30pm - 7:30pm
+
+Attendees: 
+
+* Ryan Sickle - CoderAcademy
+* Steven Vi - CoderAcademy
+* Alan Gao - CoderAcademy
+* Andrew (Founder) - SocialMindr 
+* David(Developer) - SocialMindr
+* Dan (Developer) - SociaMindr
+
+Minutes: 
+
+* Sprint planning developed by SocialMindr
+* As per project brief and sprint planning, CoderAcademy is to develop both front and back end systems  - **Action CoderAcademy**
+* SocialMindr to develop a bridge to connect their systems (AWS) to CoderAcademy backend/frontend system - **Action SocialMindr**
+* Private GitHub repository to be established - **Action - SocialMindr**
+* Sprint Trello board  - **Action - SocialMindr**
+* Front and Back End specifics/feature trello board setup - **Action CoderAcademy**
+___
+#####Meeting #3 - Client Feedback
+Location: SocialMindr office 
+
+Date/Time: Friday 25th Jan 2018 | 2:00pm - 3:00pm
+
+Attendees: 
+
+* Ryan Sickle - CoderAcademy
+* Steven Vi - CoderAcademy
+* Alan Gao - CoderAcademy
+* Andrew (Founder) - SocialMindr 
+* Karan(Founder) - SocialMindr
+
+Apologies:
+
+* Dan (Developer) - SociaMindr
+* David (Developer) - SocialMindr
+
+Minutes: 
+
+* Project status update to SocialMindr on the work that has been done
+* Feedback has been positive with the work produced.
+* Scope of works have been updated in order to accomodate SocialMindr's feedback, the following below will added by CoderAcademy: - **Action CoderAcademy**
+
+  * add feature to update a client's information on the client status component
+
+  * add feature to delete client on client status component
+
+  * toggling account status off will turn off server status 
+
+  * company size field to be able to select multiple options
+
+  * search bar, will filter out clients based as a user types in it
+
+  * client status component needs to be sticked 
+
+* Information about the SocialMindr's AWS system needs to be provided to CoderAcademy - **Action - SocialMindr**
+
+* If time permits SocialMindr wishes to have CoderAcademy to deploy to a domain name purchased by SocialMindr - **Action - CoderAcademy**
+___
 
 ##  Short Answer Questions
 
