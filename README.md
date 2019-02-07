@@ -139,9 +139,9 @@ ___
 ![project planning](docs/SocialMindr-ProjectTimeLine.png)
 
 ___
-####Client Meetings
+### Client Meetings
 
-####Meeting #1 - Introductions
+#### Meeting #1 - Introductions
 Location: SocialMindr office 
 
 Date/Time: Wednesday 15th Jan 2018 | 6:30pm - 7:30pm
@@ -164,7 +164,7 @@ Minutes:
 * Establishing communication plans between the two parties, communications to be done via slack. SocialMindr to invite CoderAcademy into their private chat - **Action - SocialMindr**
 * Scope of works to be fleshed out by SocialMindr and issued to CoderAcademy - **Action - SocialMindr**
 ___
-####Meeting #2 - Defining Scope of Works
+#### Meeting #2 - Defining Scope of Works
 Location: SocialMindr office 
 
 Date/Time: Wednesday 15th Jan 2018 | 6:30pm - 7:30pm
@@ -187,7 +187,7 @@ Minutes:
 * Sprint Trello board  - **Action - SocialMindr**
 * Front and Back End specifics/feature trello board setup - **Action CoderAcademy**
 ___
-####Meeting #3 - Client Feedback
+#### Meeting #3 - Client Feedback
 Location: SocialMindr office 
 
 Date/Time: Friday 25th Jan 2018 | 2:00pm - 3:00pm
@@ -228,6 +228,15 @@ Minutes:
 * If time permits SocialMindr wishes to have CoderAcademy to deploy to a domain name purchased by SocialMindr - **Action - CoderAcademy**
 ___
 
+## Trello Board
+
+___
+![Trello Board](docs/SocialMindr-TrelloBoard#1.png)
+
+___
+![Trello Board](docs/SocialMindr-TrelloBoard#2.png)
+
+___
 ##  Short Answer Questions
 
 
