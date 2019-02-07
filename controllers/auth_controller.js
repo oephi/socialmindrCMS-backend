@@ -21,7 +21,6 @@ async function register(req, res, next) {
 
 // Logic for logging in a user
 async function login(req, res, next) {
-	console.log('testing----');
 	// Desctructuring the email and password values out of the request body
 	const { email, password } = req.body;
 	try {
@@ -29,9 +28,7 @@ async function login(req, res, next) {
 		const { user, error } = await UserModel.authenticate()(email, password);
 		if (error) throw error;
 		const token = JWTService.createJWT(user._id);
-		//Assign a session to the user if user exists
-		// req.session.token = token;
-		// res.redirect('/clients');
+		
 		res.json(token);
 	} catch (error) {
 		return next(error);
