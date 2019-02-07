@@ -231,10 +231,10 @@ ___
 ## Trello Board
 
 ___
-![Trello Board](docs/SocialMindr-trelloboard#1.png)
+![Trello Board](docs/SocialMindr-TrelloBoard#1.png)
 
 ___
-![Trello Board](docs/SocialMindr-trelloboard#2.png)
+![Trello Board](docs/SocialMindr-TrelloBoard#2.png)
 
 ___
 ##  Short Answer Questions
