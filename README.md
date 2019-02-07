@@ -37,19 +37,19 @@ The features of the SocialMindr dashboard include:
 
 ### Screenshots
 
-[Login Page](docs/SocialMindr-login-page.png)
+![Login Page](docs/SocialMindr-login-page.png)
 
-[Client Status](docs/SocialMindr-Client-status.png)
+![Client Status](docs/SocialMindr-Client-status.png)
 
-[Client Verification](docs/SocialMindr-Client-verification.png)
+![Client Verification](docs/SocialMindr-Client-verification.png)
 
-[Server Logs](docs/SocialMindr-Server-logs.png)
+![Server Logs](docs/SocialMindr-Server-logs.png)
 
-[Statistics](docs/SocialMindr-Statistics.png)
+![Statistics](docs/SocialMindr-Statistics.png)
 
-[Client List](docs/SocialMindr-client-list.png)
+![Client List](docs/SocialMindr-client-list.png)
 
-[Filters Page](docs/Socialmindr-Filters-page.png)
+![Filters Page](docs/Socialmindr-Filters-page.png)
 
 
 ### Tech stack
